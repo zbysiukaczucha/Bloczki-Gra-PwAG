@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>18.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{0abc1f0e-5f04-4977-b082-1e95524af2b8}</ProjectGuid>
+    <RootNamespace>BloczkiGraPwAG</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)Resources\Textures" "$(OutDir)Resources\Textures" /Y /S /I /D
+xcopy "$(ProjectDir)Engine\Graphics\Shaders" "$(OutDir)Engine\Graphics\Shaders" /Y /S /I /D</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(ProjectDir)Resources\Textures" "$(OutDir)Resources\Textures" /Y /S /I /D
+xcopy "$(ProjectDir)Engine\Graphics\Shaders" "$(OutDir)Engine\Graphics\Shaders" /Y /S /I /D</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine\Core\Application.cpp" />
+    <ClCompile Include="Engine\Core\CollisionSystem.cpp" />
+    <ClCompile Include="Engine\Core\Events\WindowEventType.h" />
+    <ClCompile Include="Engine\Core\Input.cpp" />
+    <ClCompile Include="Engine\Core\Player.cpp" />
+    <ClCompile Include="Engine\Core\Timer.cpp" />
+    <ClCompile Include="Engine\Core\Window.cpp" />
+    <None Include="Engine\Graphics\Shaders\DeferredCommons.hlsl" />
+    <None Include="Engine\Graphics\Shaders\PointLightGPU.hlsl" />
+    <ClCompile Include="Engine\Graphics\Camera.cpp" />
+    <ClCompile Include="Engine\Graphics\Mesher.cpp" />
+    <Content Include="Engine\Graphics\Shaders\Ambient.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\BlockOutline.hlsl" />
+    <ClCompile Include="Engine\Graphics\TextureManager.cpp" />
+    <ClCompile Include="Engine\Main.cpp" />
+    <ClCompile Include="Engine\Graphics\DX11Context.cpp" />
+    <ClCompile Include="Engine\Graphics\Renderer.cpp" />
+    <ClCompile Include="Engine\World\Block.cpp" />
+    <ClCompile Include="Engine\World\BlockDatabase.cpp" />
+    <ClCompile Include="Engine\World\Chunk.cpp" />
+    <ClCompile Include="Engine\World\ChunkGenerators\FlatGenerator.cpp" />
+    <ClCompile Include="Engine\World\VoxelLightingEngine.cpp" />
+    <ClCompile Include="Engine\World\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Engine\GUI\" />
+    <Folder Include="Resources\Textures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine\Core\Application.h" />
+    <ClInclude Include="Engine\Core\BlockRaycastResult.h" />
+    <ClInclude Include="Engine\Core\CollisionSystem.h" />
+    <ClInclude Include="Engine\Core\Events\WindowEventBase.h" />
+    <ClInclude Include="Engine\Core\Events\WindowEventFocusChange.h" />
+    <ClInclude Include="Engine\Core\Events\WindowEventResize.h" />
+    <ClInclude Include="Engine\Core\Input.h" />
+    <ClInclude Include="Engine\Core\Player.h" />
+    <ClInclude Include="Engine\Core\Timer.h" />
+    <ClInclude Include="Engine\Core\Window.h" />
+    <ClInclude Include="Engine\Graphics\Camera.h" />
+    <ClInclude Include="Engine\Graphics\CBuffer.h" />
+    <ClInclude Include="Engine\Graphics\DebugRenderMode.h" />
+    <ClInclude Include="Engine\Graphics\DX11Context.h" />
+    <ClInclude Include="Engine\Graphics\FrameConstants.h" />
+    <ClInclude Include="Engine\Graphics\Light.h" />
+    <ClInclude Include="Engine\Graphics\MeshData.h" />
+    <ClInclude Include="Engine\Graphics\Mesher.h" />
+    <ClInclude Include="Engine\Graphics\Renderer.h" />
+    <None Include="Engine\Graphics\Shaders\ShaderCommons.hlsl" />
+    <ClInclude Include="Engine\Graphics\ResourceBindType.h" />
+    <ClInclude Include="Engine\Graphics\SkyBuffer.h" />
+    <ClInclude Include="Engine\Graphics\TextureManager.h" />
+    <ClInclude Include="Engine\Graphics\UIConstants.h" />
+    <ClInclude Include="Engine\Graphics\Vertex.h" />
+    <ClInclude Include="Engine\Utils\ChunkUtils.h" />
+    <ClInclude Include="Engine\Utils\SkyColor.h" />
+    <ClInclude Include="Engine\Utils\SunColor.h" />
+    <ClInclude Include="Engine\Utils\TestCube.h" />
+    <ClInclude Include="Engine\Utils\ThirdParty\stb_image.h" />
+    <ClInclude Include="Engine\Utils\ThirdParty\stb_truetype.h" />
+    <ClInclude Include="Engine\World\Block.h" />
+    <ClInclude Include="Engine\World\BlockData.h" />
+    <ClInclude Include="Engine\World\BlockDatabase.h" />
+    <ClInclude Include="Engine\World\BlockFace.h" />
+    <ClInclude Include="Engine\World\BlockType.h" />
+    <ClInclude Include="Engine\World\Chunk.h" />
+    <ClInclude Include="Engine\World\ChunkContext.h" />
+    <ClInclude Include="Engine\World\ChunkGenerators\FlatGenerator.h" />
+    <ClInclude Include="Engine\World\ChunkGenerators\IChunkGenerator.h" />
+    <ClInclude Include="Engine\World\VoxelLightingEngine.h" />
+    <ClInclude Include="Engine\World\World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".clang-format" />
+    <Content Include="Engine\Graphics\Shaders\Bloom.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\Composite.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\Debug.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\GeometryPass.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\Hotbar.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\PointLights.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\Sky.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\Sunlight.hlsl" />
+    <Content Include="Engine\Graphics\Shaders\SunShadows.hlsl" />
+    <Content Include="Engine\Math\DirectXMathOperators.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,57 @@
+# ===========================
+# 1. IDE junk
+# ===========================
+.idea/
+.vs/
+*.user
+*.suo
+*.opensdf
+*.sdf
+*.cache
+*.bak
+
+# ===========================
+# 2. BUILD ARTIFACTS
+# ===========================
+# Standard output folders
+x64/
+x86/
+Debug/
+Release/
+build/
+bin/
+
+# Intermediate files
+*.obj
+*.log
+*.tlog
+*.idb
+*.pdb
+*.ilk
+*.pch
+*.ipch
+*.recipe
+
+# Intermediate folder
+Bloczki-Gra-PwAG/
+
+# ===========================
+# 3. RESOURCES
+# ===========================
+# First, ignore EVERYTHING in Resources
+Resources/*
+
+# Second, un-ignore the folder structure for Textures
+!Resources/Textures/
+
+# Third, un-ignore the actual files inside Textures
+!Resources/Textures/*
+
+# ===========================
+# 4. ASSET SOURCE FILES (Just in case)
+# ===========================
+*.psd
+*.ase
+*.aseprite
+*.kra
+*.laigter
