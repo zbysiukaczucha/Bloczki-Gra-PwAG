@@ -6,9 +6,7 @@ A voxel engine/game project for PwAG subject (Programowanie w API Graficznych)
 
 ## Showcase
 
-
-https://github.com/user-attachments/assets/7dfc34cc-3af3-416a-b1e8-9e0402df63db
-
+https://github.com/user-attachments/assets/e1de29d3-730b-48e6-8c96-769cd4caaa6e
 
 
 ## Controls
