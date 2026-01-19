@@ -3,6 +3,18 @@
 #include "Events/WindowEventFocusChange.h"
 #include "Events/WindowEventResize.h"
 
+namespace
+{
+	template <typename T>
+	std::string ToStringWithPrecision(const T value, const int decimalPlaces = 6)
+	{
+		std::ostringstream out;
+		out.precision(decimalPlaces);
+		out << std::fixed << value;
+		return std::move(out).str();
+	}
+} // namespace
+
 Application::Application()
 {
 }
@@ -75,7 +87,10 @@ void Application::Run()
 	// Reset the timer, it might have some small amount of time from the initialization
 	timer_.Reset();
 	Timer perfCounter;
-	bool  wireframeEnabled = true;
+
+	float currentFrameFPS	 = 0.0f;
+	float FPSTimeAccumulator = 0.0f;
+	float FPS				 = 0.0f;
 	// Loop until a quit message appears
 	while (!done)
 	{
@@ -126,6 +141,15 @@ void Application::Run()
 			renderer_.EndScene();
 			perfCounter.Reset();
 
+			// Calculate FPS
+			currentFrameFPS		= 1.0f / deltaTime;
+			FPSTimeAccumulator += deltaTime;
+			if (FPSTimeAccumulator >= 0.07f)
+			{
+				FPS				   = (0.85f * FPS) + (0.15f * currentFrameFPS);
+				FPSTimeAccumulator = 0.0f;
+			}
+
 			DirectX::XMVECTOR cameraPos	   = player_.GetCamera().GetPosition();
 			const float		  x			   = DirectX::XMVectorGetX(cameraPos);
 			const float		  y			   = DirectX::XMVectorGetY(cameraPos);
@@ -133,7 +157,7 @@ void Application::Run()
 			Chunk*			  currentChunk = world_.GetChunkFromBlock(DirectX::XMFLOAT3{x, y, z});
 
 			std::string windowTitle = ("Bloczki: "
-									   + std::to_string(1.0 / deltaTime)
+									   + ToStringWithPrecision(FPS, 0)
 									   + " FPS"
 									   + " | World took: "
 									   + std::to_string(worldPerf * 1000.0)

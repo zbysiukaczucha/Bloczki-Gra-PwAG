@@ -147,6 +147,7 @@ xcopy "$(ProjectDir)Engine\Graphics\Shaders" "$(OutDir)Engine\Graphics\Shaders" 
     <None Include="Engine\Graphics\Shaders\PointLightGPU.hlsl" />
     <ClCompile Include="Engine\Graphics\Camera.cpp" />
     <ClCompile Include="Engine\Graphics\Mesher.cpp" />
+    <Content Include=".gitignore" />
     <Content Include="Engine\Graphics\Shaders\Ambient.hlsl" />
     <Content Include="Engine\Graphics\Shaders\BlockOutline.hlsl" />
     <ClCompile Include="Engine\Graphics\TextureManager.cpp" />
