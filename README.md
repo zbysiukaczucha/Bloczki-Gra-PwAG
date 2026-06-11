@@ -15,8 +15,11 @@ https://github.com/user-attachments/assets/e1de29d3-730b-48e6-8c96-769cd4caaa6e
     + Implemented to support numerous point lights
 * PBR shading
 * Lighting
-    + Directional (Sun), Voxel-based, Point
+    + Directional (Sun), Voxel-based, Point, 
 * Parallax Occlusion Mapping
+* Shadow mapping
+* Reinhard luminance tonemapping
+* Bloom
 
 ### Performance
 * Chunking system
