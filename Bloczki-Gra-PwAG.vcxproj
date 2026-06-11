@@ -125,6 +125,7 @@ xcopy "$(ProjectDir)Engine\Graphics\Shaders" "$(OutDir)Engine\Graphics\Shaders" 
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

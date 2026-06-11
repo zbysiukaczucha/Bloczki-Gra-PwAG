@@ -194,6 +194,9 @@
     <ClInclude Include="Engine\World\VoxelLightingEngine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Graphics\DebugRenderMode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Engine\Graphics\Shaders\ShaderCommons.hlsl" />
